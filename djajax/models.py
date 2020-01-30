@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from builtins import object
 from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -114,5 +115,5 @@ class SerializableMixin(models.Model):
 
         return serialized_value
 
-    class Meta:
+    class Meta(object):
         abstract = True

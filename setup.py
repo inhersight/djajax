@@ -4,6 +4,7 @@
 # Note: To use the 'upload' functionality of this file, you must:
 #   $ pip install twine
 
+from __future__ import print_function
 import io
 import os
 import sys

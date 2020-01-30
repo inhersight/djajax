@@ -1,3 +1,5 @@
+from __future__ import print_function
+from builtins import object
 from django.test import TransactionTestCase
 try:
     from django.test.runner import DiscoverRunner as BaseRunner
@@ -34,7 +36,7 @@ class NoDatabaseMixin(object):
         if self._needs_db:
             return super(NoDatabaseMixin, self).setup_databases(*args, **kwargs)
         if self.verbosity >= 1:
-            print 'No DB tests detected. Skipping Test DB creation...'
+            print('No DB tests detected. Skipping Test DB creation...')
         self._db_patch = patch('django.db.backends.utils.CursorWrapper')
         self._db_mock = self._db_patch.start()
         self._db_mock.side_effect = RuntimeError('No testing the database!')
